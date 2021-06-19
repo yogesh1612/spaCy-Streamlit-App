@@ -124,6 +124,7 @@ def senti_df(raw_text):
 		senti_df1 = pd.concat([senti_df1, a0])
 	return senti_df1
 
+models = ["en_core_web_sm"]
 
 ## main app wrapper func
 
@@ -229,10 +230,12 @@ def main():
         
 	if choice == "Parse_tree by Sentence":
 		st.subheader("Sentence Parse_Tree")
-		raw_text = st.text_area("Your Text","Enter Text Here")
-		docx = nlp(raw_text)
-		a1 = [to_nltk_tree(sent.root).pretty_print() for sent in docx.sents]
-		st.write(a1)
+		#raw_text = st.text_area("Your Text","Enter Text Here")
+		#docx = nlp(raw_text)
+		default_text = "Sundar Pichai is the CEO of Google."
+		spacy_streamlit.visualize(models,default_text,show_json_doc=False,show_meta=False,show_config=False, show_pipeline_info=False,show_logo=False,visualizers = ["parser"])
+		#a1 = [to_nltk_tree(sent.root).pretty_print() for sent in docx.sents]
+		#st.write(a1)
         
                    
 if __name__ == '__main__':
