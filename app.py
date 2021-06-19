@@ -9,7 +9,7 @@ except OSError:
         "(don't worry, this will only happen once)", file=stderr)
     from spacy.cli import download
     download('en_core_web_sm')
-    nlp = spacy.load('en')
+    nlp = spacy.load('en_core_web_sm')
 #nlp = spacy.load('en_core_web_sm')
 #import os
 #from PIL import Image
