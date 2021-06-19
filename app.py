@@ -2,7 +2,15 @@ import streamlit as st
 # NLP Pkgs
 import spacy_streamlit
 import spacy, time
-nlp = spacy.load('en_core_web_sm')
+try:
+    nlp = spacy.load('en_core_web_sm')
+except OSError:
+    print('Downloading language model for the spaCy POS tagger\n'
+        "(don't worry, this will only happen once)", file=stderr)
+    from spacy.cli import download
+    download('en_core_web_sm')
+    nlp = spacy.load('en')
+#nlp = spacy.load('en_core_web_sm')
 #import os
 #from PIL import Image
 from nltk.tokenize import sent_tokenize, word_tokenize
