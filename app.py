@@ -168,8 +168,8 @@ def main():
 			<br>
 			<br>
 			<br>
-			<h1 style="color:#26608e;"> Upload your CSV file to begin clustering </h1>
-			<h3 style="color:#f68b28;"> MLBM </h3>
+			<h1 style="color:#26608e;"> Upload your CSV file</h1>
+			<h3 style="color:#f68b28;"></h3>
 			""", unsafe_allow_html=True) 
                    
 
